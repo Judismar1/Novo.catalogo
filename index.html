@@ -61,7 +61,8 @@
       .navbar {
         background: var(--rosa-principal);
         box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-        padding-bottom: 16px;
+        padding-bottom: 12px;
+        padding-top: 12px;
       }
 
       .navbar-brand img {
@@ -76,23 +77,8 @@
         transition: all 0.3s ease;
       }
 
-      .nav-link::after {
-        content: "";
-        position: absolute;
-        bottom: -4px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: var(--rosa-claro);
-        transition: width 0.3s;
-      }
-
       .nav-link:hover {
         color: var(--rosa-claro) !important;
-      }
-
-      .nav-link:hover::after {
-        width: 100%;
       }
 
       .titulo-principal {
@@ -234,91 +220,45 @@
         background-color: rgba(255, 102, 178, 0.5);
         color: var(--preto);
       }
-      .social-fixed {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        z-index: 10000;
+
+      .nav-social a {
+        color: var(--branco);
+        font-size: 1.3rem;
+        margin-left: 15px;
+        transition: transform 0.2s ease;
       }
 
-      .social-fixed .icon {
-        background-color: #fff;
-        border-radius: 50%;
-        padding: 14px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-        font-size: 22px;
-        color: #000;
-        transition: transform 0.2s ease, background-color 0.3s;
-        text-decoration: none;
-        text-align: center;
-      }
-
-      .social-fixed .icon:hover {
-        transform: scale(1.15);
-        background-color: #f0f0f0;
-      }
-
-      .icon.instagram {
-        color: #c13584;
-      }
-
-      .icon.whatsapp {
-        color: #25d366;
-      }
-
-      /* Responsivo: menor espaço em telas pequenas */
-      @media (max-width: 600px) {
-        .social-fixed {
-          bottom: 15px;
-          right: 15px;
-        }
-        .social-fixed .icon {
-          padding: 12px;
-          font-size: 20px;
-        }
+      .nav-social a:hover {
+        transform: scale(1.2);
+        color: var(--rosa-claro);
       }
     </style>
   </head>
+
   <body>
+    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-md">
-      <div class="container">
-        <a class="navbar-brand" href="#">
+      <div class="container d-flex flex-column align-items-center">
+        <!-- Logo -->
+        <a class="navbar-brand mx-auto" href="#">
           <img src="Logo branco.png" alt="Logo" />
         </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse justify-content-end"
-          id="navbarNav"
-        >
-          <!-- Botões de redes sociais fixos com tooltip -->
-          <div class="social-fixed">
-            <a
-              href="https://www.instagram.com/fitdelas_/"
-              target="_blank"
-              class="icon instagram"
-              title="Siga no Instagram"
-            >
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a
-              href="https://wa.me/5515991155318"
-              target="_blank"
-              class="icon whatsapp"
-              title="Fale no WhatsApp"
-            >
-              <i class="fab fa-whatsapp"></i>
-            </a>
-          </div>
+        <!-- Redes sociais -->
+        <div class="nav-social d-flex justify-content-center mt-2">
+          <a
+            href="https://www.instagram.com/fitdelas_/"
+            target="_blank"
+            aria-label="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://wa.me/5515991155318"
+            target="_blank"
+            aria-label="WhatsApp"
+          >
+            <i class="fab fa-whatsapp"></i>
+          </a>
         </div>
       </div>
     </nav>
@@ -343,15 +283,15 @@
               src="Unknown-3.jpeg"
               alt="Macaquinho Fitly"
               class="card-img-top"
-              data-gallery='["Unknown-3.jpeg", "Unknown-4.jpeg"]'
+              data-gallery='["Unknown-4.jpeg", "Unknown-3.jpeg"]'
               tabindex="0"
             />
             <div class="card-body">
               <h5 class="card-title">Macaquinho Fitly</h5>
               <br />
-              <p>Material: 90% Poliamida, 10% Elastano</p>
-              <p>Cores: Azul Royal/Preto</p>
-              <p>Tamanhos: P/M</p>
+              <p>Material: 90% Poliamida e 10% Elastano</p>
+              <p>Cores: Azul Royal, Preto</p>
+              <p>Tam.: P/M</p>
               <p class="mb-2"><span class="preco-promocional">R$99,90</span></p>
               <br />
               <a
@@ -377,9 +317,9 @@
             <div class="card-body">
               <h5 class="card-title">Conjunto Poppy</h5>
               <br />
-              <p>Material: 90% Poliamida, 10% Elastano</p>
+              <p>Material: 90% Poliamida e 10% Elastano</p>
               <p>Cor: Azul marinho</p>
-              <p>Tamanho: M</p>
+              <p>Tam.: M</p>
               <p class="mb-2">
                 <span class="preco-promocional">R$119,90</span>
               </p>
@@ -407,9 +347,9 @@
             <div class="card-body">
               <h5 class="card-title">Conjunto Army</h5>
               <br />
-              <p>Material: 86% Poliamida, 14% Elastano</p>
+              <p>Material: 86% Poliamida e 14% Elastano</p>
               <p>Cor: Bege brilhoso</p>
-              <p>Tamanho: M</p>
+              <p>Tam.: M</p>
               <p class="mb-2">
                 <span class="preco-promocional">R$159,90</span>
               </p>
@@ -437,11 +377,9 @@
             <div class="card-body">
               <h5 class="card-title">Calça Legging Rabel</h5>
               <br />
-              <p>Material: 85% Poliamida, 15% Elastano</p>
-              <p>Cor: Rosa escuro</p>
-              <p>Tamanho: P</p>
-              <p>Cor: Preto</p>
-              <p>Tamanho: G</p>
+              <p>Material: 85% Poliamida e 15% Elastano</p>
+              <p>Cores: Rosa escuro, Preto</p>
+              <p>Tam.: P/G</p>
               <p class="mb-2"><span class="preco-promocional">R$89,90</span></p>
               <br />
               <a
@@ -467,13 +405,9 @@
             <div class="card-body">
               <h5 class="card-title">Conjunto Poli/BLACKOUT</h5>
               <br />
-              <p>Material: 90% Poliamida, 10% Elastano</p>
-              <p>Cor: Azu bebê, Verde escuro, Cinza</p>
-              <p></p>
-              <p>Cor: Rosa escuro, Verde escuro, Cinza</p>
-              <p>Tamanho: G</p>
-              <p>Cor: Cinza</p>
-              <p>Tamanho: GG</p>
+              <p>Material: 90% Poliamida e 10% Elastano</p>
+              <p>Cores: Azul bebê, Verde escuro, Cinza, Rosa escuro</p>
+              <p>Tam.: G/GG</p>
               <p class="mb-2"><span class="preco-promocional">R$89,90</span></p>
               <br />
               <a
@@ -499,9 +433,9 @@
             <div class="card-body">
               <h5 class="card-title">Conjunto Moscow</h5>
               <br />
-              <p>Material: 80% Poliamida, 20% Elastano</p>
+              <p>Material: 80% Poliamida e 20% Elastano</p>
               <p>Cor: Rosa ruby</p>
-              <p>Tamanho: M</p>
+              <p>Tam.: M</p>
               <p class="mb-2">
                 <span class="preco-promocional">R$109,90</span>
               </p>
@@ -529,11 +463,9 @@
             <div class="card-body">
               <h5 class="card-title">Calça Legging Sky</h5>
               <br />
-              <p>Material: 85% Poliamida, 15% Elastano</p>
-              <p>Cores: Preto e Azul escuro</p>
-              <p>Tamanho: M</p>
-              <p>Cor: Verde menta</p>
-              <p>Tamanho: G</p>
+              <p>Material: 85% Poliamida e 15% Elastano</p>
+              <p>Cores: Preto, Azul escuro, Verde menta</p>
+              <p>Tam.: M/G</p>
               <p class="mb-2"><span class="preco-promocional">R$89,90</span></p>
               <br />
               <a
@@ -559,9 +491,9 @@
             <div class="card-body">
               <h5 class="card-title">Shorts Sobreposto</h5>
               <br />
-              <p>Material: 92% Poliamida, 8% Elastano</p>
-              <p>Cor:Preto</p>
-              <p>Tamanhos: M/G/GG</p>
+              <p>Material: 92% Poliamida e 8% Elastano</p>
+              <p>Cor: Preto</p>
+              <p>Tam.: M/G/GG</p>
               <p class="mb-2"><span class="preco-promocional">R$54,90</span></p>
               <br />
               <a
@@ -590,9 +522,9 @@
             <div class="card-body">
               <h5 class="card-title">Conjunto Maya/Shorts saia</h5>
               <br />
-              <p>Material: 92% Poliamida, 8% Elastano</p>
+              <p>Material: 92% Poliamida e 8% Elastano</p>
               <p>Cor: Marsala</p>
-              <p>Tamanho: M</p>
+              <p>Tam.: M</p>
               <p class="mb-2">
                 <span class="preco-promocional">R$119,90</span>
               </p>
@@ -623,11 +555,9 @@
             <div class="card-body">
               <h5 class="card-title">Shorts Glow/Shorts com bolso</h5>
               <br />
-              <p>Material: 84% Poliamida, 16% Elastano</p>
-              <p>Cor: Roxo</p>
-              <p>Tamanho: G</p>
-              <p>Cor: Preto</p>
-              <p>Tamanho GG</p>
+              <p>Material: 84% Poliamida e 16% Elastano</p>
+              <p>Cores: Roxo, Preto</p>
+              <p>Tam.: G/GG</p>
               <p class="mb-2"><span class="preco-promocional">R$69,90</span></p>
               <br />
               <a
@@ -640,11 +570,11 @@
             </div>
           </div>
         </div>
-        <!--Fim Produtos-->
+        <!--Fim produto-->
       </div>
     </div>
 
-    <!-- Modal de Imagem -->
+    <!-- Modal -->
     <div
       class="modal fade"
       id="imagemModal"
@@ -676,7 +606,7 @@
 
     <footer>&copy; 2025 Fit Delas - Todos os direitos reservados</footer>
 
-    <!-- Scripts -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       const filtroInput = document.getElementById("filtroInput");
