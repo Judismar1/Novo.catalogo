@@ -5,19 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Catálogo – Fit Delas</title>
 
-    <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-
-    <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&family=Playfair+Display:wght@600&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -31,28 +26,20 @@
         --branco: #fff;
         --preto: #222;
         --verde-promocao: #030f05;
-        --cinza-texto: #6c757d;
       }
 
-      html,
       body {
-        height: 100%;
         margin: 0;
         font-family: "Poppins", sans-serif;
-        scroll-behavior: smooth;
-        color: var(--preto);
         background: rgba(248, 247, 247, 0.28);
-        background-size: cover;
+        color: var(--preto);
         overflow-x: hidden;
       }
 
       body::before {
         content: "";
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        inset: 0;
         background: rgba(255, 230, 240, 0.75);
         z-index: 0;
         pointer-events: none;
@@ -61,8 +48,7 @@
       .navbar {
         background: var(--rosa-principal);
         box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-        padding-bottom: 12px;
-        padding-top: 12px;
+        padding: 12px 0;
       }
 
       .navbar-brand img {
@@ -72,9 +58,7 @@
 
       .nav-link {
         color: var(--branco) !important;
-        font-weight: 400;
-        position: relative;
-        transition: all 0.3s ease;
+        transition: 0.3s;
       }
 
       .nav-link:hover {
@@ -82,14 +66,14 @@
       }
 
       .titulo-principal {
-        position: relative;
-        z-index: 2;
         text-align: center;
         font-family: "Playfair Display", serif;
         font-size: 35px;
         color: var(--rosa-principal);
         margin: 40px auto 60px;
         text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
+        position: relative;
+        z-index: 2;
       }
 
       .filtro-container {
@@ -105,8 +89,8 @@
         font-size: 1.1rem;
         border-radius: 25px;
         border: 1px solid var(--rosa-principal);
-        outline: none;
         background: linear-gradient(to right, #ffe6f0, #fff);
+        outline: none;
       }
 
       .filtro-input:focus {
@@ -115,23 +99,21 @@
       }
 
       .container-produtos {
-        position: relative;
-        z-index: 2;
         max-width: 1200px;
         margin: 0 auto 60px;
         padding: 0 15px;
+        position: relative;
+        z-index: 2;
       }
 
       .card {
         border: none;
         border-radius: 12px;
-        background-color: var(--branco);
+        background: var(--branco);
         box-shadow: 0 4px 15px rgba(255, 102, 178, 0.25);
-        display: flex;
-        flex-direction: column;
         padding: 15px;
-        transition: 0.3s ease;
         text-align: center;
+        transition: 0.3s;
       }
 
       .card:hover {
@@ -142,7 +124,7 @@
       .card img {
         width: 100%;
         border-radius: 12px;
-        transition: transform 0.25s ease;
+        transition: transform 0.25s;
         cursor: pointer;
         margin-bottom: 15px;
       }
@@ -156,13 +138,6 @@
         color: var(--rosa-principal);
         font-size: 1.4rem;
         margin: 10px 0 8px;
-      }
-
-      .preco-normal {
-        color: var(--cinza-texto);
-        text-decoration: line-through;
-        font-size: 0.9rem;
-        margin-right: 8px;
       }
 
       .preco-promocional {
@@ -191,7 +166,7 @@
       }
 
       footer {
-        background-color: var(--rosa-principal);
+        background: var(--rosa-principal);
         color: var(--branco);
         text-align: center;
         padding: 20px;
@@ -213,7 +188,7 @@
         padding: 10px 20px;
         margin: 10px;
         border-radius: 20px;
-        transition: 0.3s ease;
+        transition: 0.3s;
       }
 
       .modal-nav-btn:hover {
@@ -225,7 +200,7 @@
         color: var(--branco);
         font-size: 1.3rem;
         margin-left: 15px;
-        transition: transform 0.2s ease;
+        transition: transform 0.2s;
       }
 
       .nav-social a:hover {
@@ -236,36 +211,30 @@
   </head>
 
   <body>
-    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-md">
       <div class="container d-flex flex-column align-items-center">
-        <!-- Logo -->
         <a class="navbar-brand mx-auto" href="#">
           <img src="Logo branco.png" alt="Logo" />
         </a>
-        <!-- Redes sociais -->
         <div class="nav-social d-flex justify-content-center mt-2">
           <a
             href="https://www.instagram.com/fitdelas_/"
             target="_blank"
             aria-label="Instagram"
-          >
-            <i class="fab fa-instagram"></i>
-          </a>
+            ><i class="fab fa-instagram"></i
+          ></a>
           <a
             href="https://wa.me/5515991155318"
             target="_blank"
             aria-label="WhatsApp"
-          >
-            <i class="fab fa-whatsapp"></i>
-          </a>
+            ><i class="fab fa-whatsapp"></i
+          ></a>
         </div>
       </div>
     </nav>
 
     <h1 class="titulo-principal">
-      Bem vinda ao seu closet online
-      <span class="icone-estrela">✨</span>
+      Bem vinda ao seu closet online <span>✨</span>
     </h1>
 
     <div class="filtro-container">
@@ -1331,18 +1300,12 @@
             </div>
           </div>
         </div>
-        <!--Fim produto-->
+        <!--Fim Produto-->
       </div>
     </div>
 
     <!-- Modal -->
-    <div
-      class="modal fade"
-      id="imagemModal"
-      tabindex="-1"
-      aria-labelledby="imagemModalLabel"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="imagemModal" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
           <div class="modal-header">
@@ -1367,7 +1330,6 @@
 
     <footer>&copy; 2025 Fit Delas - Todos os direitos reservados</footer>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       const filtroInput = document.getElementById("filtroInput");
