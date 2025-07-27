@@ -271,6 +271,7 @@
     <div class="container-produtos">
       <div class="row g-4" id="produtosGrid">
         <!--Produto 1-->
+        <!--Produto 1-->
         <div class="col-md-4 produto-item" data-nome="Conjunto Empire">
           <div class="card h-100">
             <div>
@@ -1457,6 +1458,13 @@
       function abrirGaleria(img) {
         galeriaAtual = JSON.parse(img.dataset.gallery || `["${img.src}"]`);
         imagemAtual = 0;
+
+        // Preload todas as imagens da galeria para acelerar a troca
+        galeriaAtual.forEach((src) => {
+          const preload = new Image();
+          preload.src = src;
+        });
+
         atualizarImagem();
         modalTitulo.textContent = img.alt;
         imagemModal.show();
@@ -1464,6 +1472,11 @@
 
       function atualizarImagem() {
         modalImagem.src = galeriaAtual[imagemAtual];
+
+        // Preload da próxima imagem para deixar a navegação mais rápida
+        const nextIndex = (imagemAtual + 1) % galeriaAtual.length;
+        const imgPreload = new Image();
+        imgPreload.src = galeriaAtual[nextIndex];
       }
 
       btnAnterior.addEventListener("click", () => {
