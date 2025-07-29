@@ -32,6 +32,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
 
     <style>
       :root {
@@ -229,6 +233,42 @@
         text-align: center;
         align-items: center;
       }
+
+      .floating-heart {
+        font-size: 1.5rem;
+        color: red;
+        animation: floatUp 1s ease forwards;
+        pointer-events: none;
+        z-index: 9999;
+        position: absolute;
+        left: 0;
+        transform: translateX(-50%);
+      }
+
+      .mb-2.d-flex.align-items-center.gap-3 {
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .btn-like {
+        font-size: 1.3rem;
+        cursor: pointer;
+      }
+
+      @keyframes floatUp {
+        0% {
+          opacity: 1;
+          transform: translateX(-50%) translateY(0);
+        }
+        100% {
+          opacity: 0;
+          transform: translateX(-50%) translateY(-50px);
+        }
+      }
+
+      .liked {
+        color: red !important;
+      }
     </style>
   </head>
 
@@ -242,12 +282,14 @@
           <a
             href="https://www.instagram.com/fitdelas_/"
             target="_blank"
+            rel="noopener noreferrer"
             aria-label="Instagram"
             ><i class="fab fa-instagram"></i
           ></a>
           <a
             href="https://wa.me/5515991155318"
             target="_blank"
+            rel="noopener noreferrer"
             aria-label="WhatsApp"
             ><i class="fab fa-whatsapp"></i
           ></a>
@@ -271,7 +313,6 @@
     <div class="container-produtos">
       <div class="row g-4" id="produtosGrid">
         <!--Produto 1-->
-        <!--Produto 1-->
         <div class="col-md-4 produto-item" data-nome="Conjunto Empire">
           <div class="card h-100">
             <div>
@@ -281,6 +322,7 @@
                 class="card-img-top"
                 data-gallery='["Unknown-30.jpg", "Unknown-29.jpg"]'
                 tabindex="0"
+                loading="lazy"
               />
             </div>
 
@@ -294,16 +336,30 @@
                 <span class="preco-promocional">R$159,90</span>
               </p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei no Conjunto Empire."
                 class="btn-whatsapp"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <i class="fab fa-whatsapp"></i> Comprar
               </a>
             </div>
           </div>
         </div>
+
         <!--Produto 2-->
         <div class="col-md-4 produto-item" data-nome="Conjunto Daizy">
           <div class="card h-100">
@@ -324,6 +380,18 @@
                 <span class="preco-promocional">R$129,90</span>
               </p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei no Conjunto Daizy."
                 class="btn-whatsapp"
@@ -354,6 +422,18 @@
                 <span class="preco-promocional">R$159,90</span>
               </p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei no Macacão Eccentric."
                 class="btn-whatsapp"
@@ -384,6 +464,18 @@
                 <span class="preco-promocional">R$159,90</span>
               </p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei no Conjunto Army."
                 class="btn-whatsapp"
@@ -414,6 +506,18 @@
                 <span class="preco-promocional">R$109,90</span>
               </p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei no Conjunto Moscow."
                 class="btn-whatsapp"
@@ -444,6 +548,18 @@
                 <span class="preco-promocional">R$119,90</span>
               </p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei no Conjunto brilhant."
                 class="btn-whatsapp"
@@ -474,6 +590,18 @@
                 <span class="preco-promocional">R$159,90</span>
               </p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei no Conjunto Vitally."
                 class="btn-whatsapp"
@@ -504,6 +632,18 @@
                 <span class="preco-promocional">R$139,90</span>
               </p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei no Macaquito Melissa."
                 class="btn-whatsapp"
@@ -534,6 +674,18 @@
                 <span class="preco-promocional">R$149,90</span>
               </p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei no Conjunto Dione."
                 class="btn-whatsapp"
@@ -564,6 +716,18 @@
                 <span class="preco-promocional">R$159,90</span>
               </p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei no Conjunto Eleganz."
                 class="btn-whatsapp"
@@ -594,6 +758,18 @@
                 <span class="preco-promocional">R$159,90</span>
               </p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei no Conjunto Ween."
                 class="btn-whatsapp"
@@ -622,6 +798,18 @@
               <p>Tam.: G2</p>
               <p class="mb-2"><span class="preco-promocional">R$69,90</span></p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei no Conjunto Repeat."
                 class="btn-whatsapp"
@@ -652,6 +840,18 @@
                 <span class="preco-promocional">R$169,90</span>
               </p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei no Conjunto Maryon."
                 class="btn-whatsapp"
@@ -680,6 +880,18 @@
               <p>Tam.: G2</p>
               <p class="mb-2"><span class="preco-promocional">R$74,90</span></p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei no Shorts com bolso."
                 class="btn-whatsapp"
@@ -708,6 +920,18 @@
               <p>Tam.: G1</p>
               <p class="mb-2"><span class="preco-promocional">R$79,90</span></p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei no Baby Look Vibrant."
                 class="btn-whatsapp"
@@ -738,6 +962,17 @@
                 <span class="preco-promocional">R$119,90</span>
               </p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei no Conjunto Poppy."
                 class="btn-whatsapp"
@@ -766,6 +1001,18 @@
               <p>Tam.: P/G</p>
               <p class="mb-2"><span class="preco-promocional">R$89,90</span></p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei na Calça Legging Rabel."
                 class="btn-whatsapp"
@@ -794,6 +1041,18 @@
               <p>Tam.: G/GG</p>
               <p class="mb-2"><span class="preco-promocional">R$89,90</span></p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei no Conjunto Poli/BLACKOUT."
                 class="btn-whatsapp"
@@ -822,6 +1081,18 @@
               <p>Tam.: M/G</p>
               <p class="mb-2"><span class="preco-promocional">R$89,90</span></p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei na Calça Legging Sky."
                 class="btn-whatsapp"
@@ -850,6 +1121,18 @@
               <p>Tam.: M/G/GG</p>
               <p class="mb-2"><span class="preco-promocional">R$54,90</span></p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei no Shorts Sobreposto."
                 class="btn-whatsapp"
@@ -883,6 +1166,18 @@
                 <span class="preco-promocional">R$119,90</span>
               </p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei no Conjunto Maya/Shorts saia."
                 class="btn-whatsapp"
@@ -914,6 +1209,18 @@
               <p>Tam.: G/GG</p>
               <p class="mb-2"><span class="preco-promocional">R$69,90</span></p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei no Shorts Glow/Shorts com bolso."
                 class="btn-whatsapp"
@@ -944,6 +1251,18 @@
                 <span class="preco-promocional">R$119,90</span>
               </p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei no Conjunto Heay."
                 class="btn-whatsapp"
@@ -972,6 +1291,18 @@
               <p>Tam.: P/M/G</p>
               <p class="mb-2"><span class="preco-promocional">R$49,90</span></p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei na Blusa Ar Livre."
                 class="btn-whatsapp"
@@ -1000,6 +1331,18 @@
               <p>Tam.: G</p>
               <p class="mb-2"><span class="preco-promocional">R$29,90</span></p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei no Tapa Bumbum."
                 class="btn-whatsapp"
@@ -1030,6 +1373,18 @@
                 <span class="preco-promocional">R$129,90</span>
               </p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei no Conjunto Breeze."
                 class="btn-whatsapp"
@@ -1057,6 +1412,18 @@
               <p>Tam.: M/G/GG</p>
               <p class="mb-2"><span class="preco-promocional">R$39,90</span></p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei no Top Glow."
                 class="btn-whatsapp"
@@ -1085,6 +1452,18 @@
               <p>Tam.: P/M/G</p>
               <p class="mb-2"><span class="preco-promocional">R$69,90</span></p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei no Top Viva - K2B."
                 class="btn-whatsapp"
@@ -1115,6 +1494,18 @@
                 <span class="preco-promocional">R$119,90</span>
               </p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei na Calça Legging - K2B."
                 class="btn-whatsapp"
@@ -1148,6 +1539,18 @@
                 <span class="preco-promocional">R$129,90</span>
               </p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei na Calça Legging - Plus size- K2B."
                 class="btn-whatsapp"
@@ -1179,6 +1582,18 @@
               <p>Tam.: P/M/G/GG</p>
               <p class="mb-2"><span class="preco-promocional">R$69,90</span></p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei no Shorts Dulia com bolso - K2B."
                 class="btn-whatsapp"
@@ -1207,6 +1622,18 @@
               <p>Tam.: P/M/G/GG</p>
               <p class="mb-2"><span class="preco-promocional">R$49,90</span></p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei na Blusa Marguerita - K2B."
                 class="btn-whatsapp"
@@ -1235,6 +1662,18 @@
               <p>Tam.: M/GG</p>
               <p class="mb-2"><span class="preco-promocional">R$39,90</span></p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei na Regata Básica."
                 class="btn-whatsapp"
@@ -1263,6 +1702,18 @@
               <p>Tam.: P/M/G/GG</p>
               <p class="mb-2"><span class="preco-promocional">R$39,90</span></p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei no Top Zin."
                 class="btn-whatsapp"
@@ -1293,6 +1744,18 @@
                 <span class="preco-promocional">R$109,90</span>
               </p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei no Macaquinho Isis."
                 class="btn-whatsapp"
@@ -1323,6 +1786,18 @@
                 <span class="preco-promocional">R$149,90</span>
               </p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei no Macacão Athena."
                 class="btn-whatsapp"
@@ -1353,6 +1828,18 @@
                 <span class="preco-promocional">R$149,90</span>
               </p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei no Conjunto Deluxe."
                 class="btn-whatsapp"
@@ -1381,6 +1868,18 @@
               <p>Tam.: P/M</p>
               <p class="mb-2"><span class="preco-promocional">R$89,90</span></p>
               <br />
+              <!--Botao coração-->
+              <div class="mb-2 d-flex align-items-center gap-3">
+                <button
+                  onclick="trackLike()"
+                  class="btn-like btn bg-transparent border-0 position-relative"
+                  aria-label="Curtir produto"
+                >
+                  <i class="bi bi-heart-fill heart"></i>
+                </button>
+                <div class="like-count text-muted small">Curtidas: 0</div>
+              </div>
+              <!--Fim botao-->
               <a
                 href="https://wa.me/5515991155318?text=Olá, me interessei no Macaquinho Fitly."
                 class="btn-whatsapp"
@@ -1390,8 +1889,8 @@
               </a>
             </div>
           </div>
+          <!--Fim novos-->
         </div>
-        <!--Fim Produto-->
       </div>
     </div>
 
@@ -1402,6 +1901,7 @@
           <div class="modal-header">
             <h5 class="modal-title" id="imagemModalLabel"></h5>
             <button
+              onclick="trackLike()"
               type="button"
               class="btn-close"
               data-bs-dismiss="modal"
@@ -1422,73 +1922,113 @@
     <footer>&copy; 2025 Fit Delas - Todos os direitos reservados</footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <script>
-      const filtroInput = document.getElementById("filtroInput");
+      // Modal de galeria de imagens
       const produtos = document.querySelectorAll(".produto-item");
-
-      filtroInput.addEventListener("input", () => {
-        const termo = filtroInput.value.toLowerCase();
-        produtos.forEach((produto) => {
-          const nome = produto.dataset.nome.toLowerCase();
-          produto.style.display = nome.includes(termo) ? "block" : "none";
-        });
-      });
-
-      const imagemModal = new bootstrap.Modal(
-        document.getElementById("imagemModal")
-      );
+      let currentIndex = 0;
+      let modalImages = [];
       const modalImagem = document.getElementById("modalImagem");
       const modalTitulo = document.getElementById("imagemModalLabel");
-      const btnAnterior = document.getElementById("btnAnterior");
-      const btnProxima = document.getElementById("btnProxima");
+      const modal = new bootstrap.Modal(document.getElementById("imagemModal"));
 
-      let galeriaAtual = [];
-      let imagemAtual = 0;
-
-      document.querySelectorAll(".card img").forEach((img) => {
-        img.addEventListener("click", () => abrirGaleria(img));
+      produtos.forEach((produto, index) => {
+        const img = produto.querySelector("img");
+        img.addEventListener("click", () => openModal(index));
         img.addEventListener("keydown", (e) => {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            abrirGaleria(img);
-          }
+          if (e.key === "Enter") openModal(index);
         });
       });
 
-      function abrirGaleria(img) {
-        galeriaAtual = JSON.parse(img.dataset.gallery || `["${img.src}"]`);
-        imagemAtual = 0;
+      function openModal(index) {
+        currentIndex = index;
+        modalImages = JSON.parse(
+          produtos[index].querySelector("img").getAttribute("data-gallery")
+        );
+        modalTitulo.textContent =
+          produtos[index].querySelector(".card-title").textContent;
+        showModalImage();
+        modal.show();
+      }
 
-        // Preload todas as imagens da galeria para acelerar a troca
-        galeriaAtual.forEach((src) => {
-          const preload = new Image();
-          preload.src = src;
+      function showModalImage() {
+        modalImagem.src = modalImages[currentIndex % modalImages.length];
+      }
+
+      document.getElementById("btnAnterior").addEventListener("click", () => {
+        currentIndex =
+          (currentIndex - 1 + modalImages.length) % modalImages.length;
+        showModalImage();
+      });
+
+      document.getElementById("btnProxima").addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % modalImages.length;
+        showModalImage();
+      });
+
+      // Filtro de produtos
+      document
+        .getElementById("filtroInput")
+        .addEventListener("input", function () {
+          const filtro = this.value.toLowerCase();
+          produtos.forEach((produto) => {
+            const nome = produto.getAttribute("data-nome").toLowerCase();
+            produto.style.display = nome.includes(filtro) ? "" : "none";
+          });
         });
 
-        atualizarImagem();
-        modalTitulo.textContent = img.alt;
-        imagemModal.show();
-      }
+      // Likes com persistência no localStorage e animação
+      document.querySelectorAll(".btn-like").forEach((btn, index) => {
+        const heartIcon = btn.querySelector(".heart");
+        const likeCount = btn.parentElement.querySelector(".like-count");
 
-      function atualizarImagem() {
-        modalImagem.src = galeriaAtual[imagemAtual];
+        let liked = localStorage.getItem(`liked_${index}`) === "true";
+        let totalLikes = parseInt(localStorage.getItem(`likes_${index}`)) || 0;
 
-        // Preload da próxima imagem para deixar a navegação mais rápida
-        const nextIndex = (imagemAtual + 1) % galeriaAtual.length;
-        const imgPreload = new Image();
-        imgPreload.src = galeriaAtual[nextIndex];
-      }
+        if (liked) heartIcon.classList.add("liked");
+        likeCount.textContent = `Curtidas: ${totalLikes}`;
 
-      btnAnterior.addEventListener("click", () => {
-        imagemAtual =
-          (imagemAtual - 1 + galeriaAtual.length) % galeriaAtual.length;
-        atualizarImagem();
+        btn.addEventListener("click", () => {
+          if (liked) return;
+          liked = true;
+          totalLikes++;
+          heartIcon.classList.add("liked");
+          likeCount.textContent = `Curtidas: ${totalLikes}`;
+          localStorage.setItem(`liked_${index}`, "true");
+          localStorage.setItem(`likes_${index}`, totalLikes);
+          floatHeart(btn);
+        });
       });
 
-      btnProxima.addEventListener("click", () => {
-        imagemAtual = (imagemAtual + 1) % galeriaAtual.length;
-        atualizarImagem();
-      });
+      function floatHeart(btn) {
+        const floating = document.createElement("div");
+        floating.className = "floating-heart position-absolute";
+        floating.innerHTML = "❤️";
+        floating.style.left = "0px"; // Inicial para evitar layout quebrado
+        floating.style.top = "0px";
+        document.body.appendChild(floating);
+
+        // Agora pega as posições
+        const rect = btn.getBoundingClientRect();
+        const floatingRect = floating.getBoundingClientRect();
+
+        // Posiciona no centro horizontal do botão e acima dele
+        floating.style.left = `${rect.left + rect.width / 2}px`;
+        floating.style.top = `${rect.top - floatingRect.height}px`;
+
+        // Aplica transform no CSS para centralizar horizontalmente
+        floating.style.transform = "translateX(-50%)";
+
+        setTimeout(() => floating.remove(), 1000);
+      }
+
+      function trackLike() {
+        gtag("event", "like", {
+          event_category: "engagement",
+          event_label: "curtida no post",
+          value: 1,
+        });
+      }
     </script>
   </body>
 </html>
