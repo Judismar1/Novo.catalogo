@@ -1934,6 +1934,10 @@
 
       produtos.forEach((produto, index) => {
         const img = produto.querySelector("img");
+
+        // Adiciona loading="lazy"
+        img.setAttribute("loading", "lazy");
+
         img.addEventListener("click", () => openModal(index));
         img.addEventListener("keydown", (e) => {
           if (e.key === "Enter") openModal(index);
@@ -1997,6 +2001,7 @@
           localStorage.setItem(`liked_${index}`, "true");
           localStorage.setItem(`likes_${index}`, totalLikes);
           floatHeart(btn);
+          trackLike(); // envia para o Google Analytics
         });
       });
 
@@ -2004,19 +2009,15 @@
         const floating = document.createElement("div");
         floating.className = "floating-heart position-absolute";
         floating.innerHTML = "❤️";
-        floating.style.left = "0px"; // Inicial para evitar layout quebrado
+        floating.style.left = "0px";
         floating.style.top = "0px";
         document.body.appendChild(floating);
 
-        // Agora pega as posições
         const rect = btn.getBoundingClientRect();
         const floatingRect = floating.getBoundingClientRect();
 
-        // Posiciona no centro horizontal do botão e acima dele
         floating.style.left = `${rect.left + rect.width / 2}px`;
         floating.style.top = `${rect.top - floatingRect.height}px`;
-
-        // Aplica transform no CSS para centralizar horizontalmente
         floating.style.transform = "translateX(-50%)";
 
         setTimeout(() => floating.remove(), 1000);
@@ -2029,6 +2030,11 @@
           value: 1,
         });
       }
+
+      // Força scroll pro topo ao recarregar
+      window.addEventListener("load", () => {
+        setTimeout(() => window.scrollTo(0, 0), 10);
+      });
     </script>
   </body>
 </html>
