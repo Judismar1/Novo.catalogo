@@ -1561,57 +1561,6 @@
             produto.style.display = nome.includes(filtro) ? "" : "none";
           });
         });
-
-      // Likes com persistência no localStorage e animação
-      document.querySelectorAll(".btn-like").forEach((btn, index) => {
-        const heartIcon = btn.querySelector(".heart");
-        const likeCount = btn.parentElement.querySelector(".like-count");
-
-        let liked = localStorage.getItem(`liked_${index}`) === "true";
-        let totalLikes = parseInt(localStorage.getItem(`likes_${index}`)) || 0;
-
-        if (liked) heartIcon.classList.add("liked");
-        likeCount.textContent = `Curtidas: ${totalLikes}`;
-
-        btn.addEventListener("click", () => {
-          if (liked) return;
-          liked = true;
-          totalLikes++;
-          heartIcon.classList.add("liked");
-          likeCount.textContent = `Curtidas: ${totalLikes}`;
-          localStorage.setItem(`liked_${index}`, "true");
-          localStorage.setItem(`likes_${index}`, totalLikes);
-          floatHeart(btn);
-          trackLike(); // envia para o Google Analytics
-        });
-      });
-
-      function floatHeart(btn) {
-        const floating = document.createElement("div");
-        floating.className = "floating-heart position-absolute";
-        floating.innerHTML = "❤️";
-        floating.style.left = "0px";
-        floating.style.top = "0px";
-        document.body.appendChild(floating);
-
-        const rect = btn.getBoundingClientRect();
-        const floatingRect = floating.getBoundingClientRect();
-
-        floating.style.left = `${rect.left + rect.width / 2}px`;
-        floating.style.top = `${rect.top - floatingRect.height}px`;
-        floating.style.transform = "translateX(-50%)";
-
-        setTimeout(() => floating.remove(), 1000);
-      }
-
-      function trackLike() {
-        gtag("event", "like", {
-          event_category: "engagement",
-          event_label: "curtida no post",
-          value: 1,
-        });
-      }
-
       // Força scroll pro topo ao recarregar
       window.addEventListener("load", () => {
         setTimeout(() => window.scrollTo(0, 0), 10);
