@@ -187,8 +187,9 @@
         transition: transform 0.3s ease, text-shadow 0.3s ease;
       }
 
-      .preco-promocional:hover {
-        transform: scale(1.1);
+      .preco-promocional {
+        display: inline-block;
+        animation: pulse 2s infinite ease-in-out;
         text-shadow: 0 0 8px rgba(0, 128, 0, 0.3);
       }
 
@@ -259,6 +260,18 @@
         color: #e22382;
         text-align: center;
         align-items: center;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
       }
     </style>
   </head>
