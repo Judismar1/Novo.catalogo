@@ -262,6 +262,38 @@
         align-items: center;
       }
 
+      .esgotado .card-img-top {
+        filter: grayscale(100%) brightness(70%);
+        opacity: 0.6;
+      }
+
+      .produto-wrapper {
+        position: relative;
+      }
+
+      .selo-esgotado {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: none;
+        color: #000;
+        font-weight: bold;
+        font-size: 1.2rem;
+        animation: sobeDesce 2s infinite;
+        z-index: 10;
+      }
+
+      @keyframes sobeDesce {
+        0%,
+        100% {
+          transform: translate(-50%, -50%) translateY(0);
+        }
+        50% {
+          transform: translate(-50%, -50%) translateY(-8px);
+        }
+      }
+
       @keyframes pulse {
         0% {
           transform: scale(1);
@@ -319,6 +351,7 @@
         <!--Produto 1-->
         <div class="col-md-4 produto-item" data-nome="Conjunto Empire">
           <div class="card h-100">
+            <!--Adicione a class'esgotado' quando esgotar o produto-->
             <div>
               <img
                 src="Unknown-29.jpg"
@@ -326,8 +359,9 @@
                 class="card-img-top"
                 data-gallery='["Unknown-30.jpg", "Unknown-29.jpg"]'
                 tabindex="0"
-                loading="lazy"
               />
+              <!-- <div class="selo-esgotado">❌ ESGOTADO ❌</div> -->
+              <!--Excluir o comentario acima pra funcionar-->
             </div>
 
             <div class="card-body">
@@ -594,14 +628,18 @@
         </div>
         <!--Produto 10-->
         <div class="col-md-4 produto-item" data-nome="Conjunto Eleganz">
-          <div class="card h-100">
+          <div class="card h-100 esgotado">
+            <!--Adicione a class'esgotado' quando esgotar o produto-->
             <img
               src="Unknown-42.jpg"
               alt="Conjunto Eleganz"
               class="card-img-top"
               data-gallery='["Unknown-43.jpg", "Unknown-42.jpg"]'
               tabindex="0"
+              loading="lazy"
             />
+            <div class="selo-esgotado">❌ ESGOTADO ❌</div>
+            <!--Excluir o comentario acima pra funcionar-->
             <div class="card-body">
               <h5 class="card-title">Conjunto Eleganz</h5>
               <br />
