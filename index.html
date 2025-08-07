@@ -301,6 +301,31 @@
         margin-top: 12px;
         font-family: sans-serif;
       }
+
+      .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 48px;
+        height: 48px;
+        background-color: rgba(255, 105, 180, 0.3); /* rosa transparente */
+        color: #e22382;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 48px;
+        border-radius: 50%; /* totalmente arredondado */
+        text-decoration: none;
+        backdrop-filter: blur(5px);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        z-index: 1000;
+      }
+
+      .back-to-top:hover {
+        background-color: rgba(255, 105, 180, 0.6);
+        transform: scale(1.1);
+      }
       @keyframes sobeDesce {
         0%,
         100% {
@@ -360,7 +385,7 @@
         placeholder="Buscar produtos..."
       />
     </div>
-
+    <a href="#" class="back-to-top">↑</a>
     <div class="container-produtos">
       <div class="row g-4" id="produtosGrid">
         <!--Produto 1-->
@@ -1897,7 +1922,9 @@
         localStorage.setItem(key, "true");
         let total = parseInt(localStorage.getItem(totalKey)) || 0;
         localStorage.setItem(totalKey, ++total);
-        contador.textContent = `${total} curtidas`;
+        contador.textContent = `${total} ${
+          total === 1 ? "curtida" : "curtidas"
+        }`;
 
         if (typeof gtag === "function") {
           gtag("event", "curtir_produto", {
