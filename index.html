@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Catálogo – Fit Delas</title>
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Tag Manager (assíncrono) -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-ZF0HKV7RPF"
@@ -16,10 +16,10 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "G-ZF0HKV7RPF");
     </script>
 
+    <!-- CSS básicos e fontes -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -29,8 +29,8 @@
       rel="stylesheet"
     />
     <link
-      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
     />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
@@ -47,6 +47,7 @@
         --verde-promocao: #030f05;
       }
 
+      /* Reset e base */
       body {
         margin: 0;
         font-family: "Poppins", sans-serif;
@@ -64,26 +65,26 @@
         pointer-events: none;
       }
 
+      /* Navbar */
       .navbar {
         background: var(--rosa-principal);
         box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
         padding: 12px 0;
       }
-
       .navbar-brand img {
-        height: 110px;
+        height: 80px; /* reduzido para mobile */
         object-fit: contain;
       }
-
       .nav-link {
         color: var(--branco) !important;
         transition: 0.3s;
+        font-size: 1rem;
       }
-
       .nav-link:hover {
         color: var(--rosa-claro) !important;
       }
 
+      /* Título principal */
       .titulo-principal {
         text-align: center;
         font-family: "Playfair Display", serif;
@@ -102,17 +103,18 @@
         text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.35);
       }
 
+      /* Filtro */
       .filtro-container {
-        max-width: 400px;
-        margin: 0 auto 40px;
+        max-width: 100%;
+        margin: 0 auto 30px;
+        padding: 0 15px;
         position: relative;
         z-index: 2;
       }
-
       .filtro-input {
         width: 100%;
         padding: 10px 16px;
-        font-size: 1.1rem;
+        font-size: 1rem;
         border-radius: 25px;
         border: 1px solid var(--rosa-principal);
         background: linear-gradient(to right, #ffe6f0, #fff);
@@ -121,24 +123,24 @@
         transition: box-shadow 0.3s ease, transform 0.2s ease,
           border-color 0.3s ease;
       }
-
       .filtro-input:hover {
         transform: scale(1.02);
       }
-
       .filtro-input:focus {
         box-shadow: 0 0 12px var(--rosa-principal);
         border-color: var(--rosa-hover);
       }
 
+      /* Container de produtos */
       .container-produtos {
-        max-width: 1200px;
-        margin: 0 auto 60px;
+        max-width: 100%;
+        margin: 0 auto 40px;
         padding: 0 15px;
         position: relative;
         z-index: 2;
       }
 
+      /* Cards */
       .card {
         border: none;
         border-radius: 12px;
@@ -148,12 +150,10 @@
         text-align: center;
         transition: 0.3s;
       }
-
       .card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 30px rgba(255, 102, 178, 0.35);
+        transform: translateY(-6px);
+        box-shadow: 0 10px 25px rgba(255, 102, 178, 0.35);
       }
-
       .card img {
         width: 100%;
         border-radius: 12px;
@@ -161,34 +161,33 @@
         cursor: pointer;
         margin-bottom: 15px;
       }
-
       .card img:hover {
         transform: scale(1.03);
       }
-
       .card-title {
         font-family: "Playfair Display", serif;
         color: var(--rosa-principal);
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         margin: 10px 0 8px;
-        transition: transform 0.3s ease, color 0.3s ease;
         cursor: pointer;
+        transition: transform 0.3s ease, color 0.3s ease;
       }
-
       .card-title:hover {
         transform: scale(1.05);
         color: var(--rosa-hover);
       }
 
+      /* Preço promocional */
       .preco-promocional {
         color: var(--verde-promocao);
         font-weight: 700;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         display: inline-block;
         animation: pulse 2s infinite ease-in-out;
         text-shadow: 0 0 8px rgba(0, 128, 0, 0.3);
       }
 
+      /* Botão Whatsapp */
       .btn-whatsapp {
         background-color: var(--rosa-principal);
         border: none;
@@ -196,7 +195,7 @@
         font-weight: 600;
         width: 100%;
         border-radius: 999px;
-        padding: 14px;
+        padding: 12px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -204,27 +203,27 @@
         text-decoration: none;
         transition: transform 0.3s ease;
       }
-
       .btn-whatsapp:hover {
         background-color: var(--rosa-hover);
         transform: scale(1.03);
       }
 
+      /* Footer */
       footer {
         background: var(--rosa-principal);
         color: var(--branco);
         text-align: center;
-        padding: 20px;
-        margin-top: 60px;
+        padding: 15px;
+        margin-top: 40px;
       }
 
+      /* Modal */
       .modal-img {
         width: 90%;
         max-height: 70vh;
         object-fit: contain;
         border-radius: 12px;
       }
-
       .modal-nav-btn {
         background-color: rgba(255, 102, 178, 0.3);
         border: none;
@@ -235,39 +234,36 @@
         border-radius: 20px;
         transition: 0.3s;
       }
-
       .modal-nav-btn:hover {
         background-color: rgba(255, 102, 178, 0.5);
         color: var(--preto);
       }
 
+      /* Redes sociais */
       .nav-social a {
         color: var(--branco);
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         margin-left: 15px;
         transition: transform 0.2s;
       }
-
       .nav-social a:hover {
         transform: scale(1.2);
         color: var(--rosa-claro);
       }
 
+      /* Outros */
       .modal {
         color: var(--rosa-principal);
         text-align: center;
         align-items: center;
       }
-
       .esgotado .card-img-top {
         filter: grayscale(100%) brightness(70%);
         opacity: 0.6;
       }
-
       .produto-wrapper {
         position: relative;
       }
-
       .selo-esgotado {
         position: absolute;
         top: 50%;
@@ -280,52 +276,48 @@
         animation: sobeDesce 2s infinite;
         z-index: 10;
       }
-
       .btn-curtir {
         background: none;
         border: none;
         cursor: pointer;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         padding: 6px;
         margin-right: 8px;
         color: #e22382;
         filter: drop-shadow(0 0 4px #fbb6d3);
         transition: transform 0.2s;
       }
-
       .btn-curtir:hover {
         transform: scale(1.1);
       }
-
       .curtida-container {
         margin-top: 12px;
         font-family: sans-serif;
       }
-
       .back-to-top {
         position: fixed;
         bottom: 20px;
         right: 20px;
-        width: 48px;
-        height: 48px;
-        background-color: rgba(255, 105, 180, 0.3); /* rosa transparente */
+        width: 44px;
+        height: 44px;
+        background-color: rgba(255, 105, 180, 0.3);
         color: #e22382;
         font-size: 20px;
         font-weight: bold;
         text-align: center;
-        line-height: 48px;
-        border-radius: 50%; /* totalmente arredondado */
+        line-height: 44px;
+        border-radius: 50%;
         text-decoration: none;
         backdrop-filter: blur(5px);
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
         transition: all 0.3s ease;
         z-index: 1000;
       }
-
       .back-to-top:hover {
         background-color: rgba(255, 105, 180, 0.6);
         transform: scale(1.1);
       }
+
       @keyframes sobeDesce {
         0%,
         100% {
@@ -347,7 +339,6 @@
       }
     </style>
   </head>
-
   <body>
     <nav class="navbar navbar-expand-md">
       <div class="container d-flex flex-column align-items-center">
@@ -1856,58 +1847,63 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-      const produtos = document.querySelectorAll(".produto-item");
-      const modalImagem = document.getElementById("modalImagem");
-      const modalTitulo = document.getElementById("imagemModalLabel");
-      const modal = new bootstrap.Modal(document.getElementById("imagemModal"));
-      let currentIndex = 0,
-        modalImages = [];
-
-      produtos.forEach((produto, index) => {
-        const img = produto.querySelector("img");
-        img.loading = "lazy";
-        img.addEventListener("click", () => openModal(index));
-        img.addEventListener(
-          "keydown",
-          (e) => e.key === "Enter" && openModal(index)
+      document.addEventListener("DOMContentLoaded", () => {
+        const produtos = document.querySelectorAll(".produto-item");
+        const modal = new bootstrap.Modal(
+          document.getElementById("imagemModal")
         );
-      });
+        const modalImagem = document.getElementById("modalImagem");
+        const modalTitulo = document.getElementById("imagemModalLabel");
+        const filtroInput = document.getElementById("filtroInput");
+        let currentIndex = 0,
+          modalImages = [];
 
-      function openModal(index) {
-        currentIndex = 0; // Corrigido: começa sempre na primeira imagem do produto
-        modalImages = JSON.parse(
-          produtos[index].querySelector("img").dataset.gallery
-        );
-        modalTitulo.textContent =
-          produtos[index].querySelector(".card-title").textContent;
-        modalImagem.src = modalImages[currentIndex];
-        modal.show();
-      }
+        produtos.forEach((produto, index) => {
+          const img = produto.querySelector("img");
+          img.loading = "lazy";
+          img.tabIndex = 0;
 
-      document.getElementById("btnAnterior").onclick = () => {
-        currentIndex =
-          (currentIndex - 1 + modalImages.length) % modalImages.length;
-        modalImagem.src = modalImages[currentIndex];
-      };
+          const open = () => {
+            currentIndex = 0;
+            modalImages = JSON.parse(img.dataset.gallery);
+            modalTitulo.textContent =
+              produto.querySelector(".card-title").textContent;
+            modalImagem.src = modalImages[currentIndex];
+            modal.show();
+          };
 
-      document.getElementById("btnProxima").onclick = () => {
-        currentIndex = (currentIndex + 1) % modalImages.length; // Corrigido: incrementa índice
-        modalImagem.src = modalImages[currentIndex];
-      };
+          img.addEventListener("click", open);
+          img.addEventListener("keydown", (e) => e.key === "Enter" && open());
+        });
 
-      document
-        .getElementById("filtroInput")
-        .addEventListener("input", function () {
-          const filtro = this.value.toLowerCase();
+        document.getElementById("btnAnterior").onclick = () => {
+          currentIndex =
+            (currentIndex - 1 + modalImages.length) % modalImages.length;
+          modalImagem.src = modalImages[currentIndex];
+        };
+
+        document.getElementById("btnProxima").onclick = () => {
+          currentIndex = (currentIndex + 1) % modalImages.length;
+          modalImagem.src = modalImages[currentIndex];
+        };
+
+        filtroInput.addEventListener("input", (e) => {
+          const termo = e.target.value.toLowerCase();
           produtos.forEach((p) => {
             const nome = p.dataset.nome.toLowerCase();
-            p.style.display = nome.includes(filtro) ? "" : "none";
+            p.style.display = nome.includes(termo) ? "" : "none";
           });
         });
 
-      window.addEventListener("load", () =>
-        setTimeout(() => scrollTo(0, 0), 10)
-      );
+        setTimeout(() => scrollTo(0, 0), 10);
+
+        document.querySelectorAll(".curtida-container").forEach((c) => {
+          const id = c.dataset.produtoId;
+          const contador = document.getElementById(`contador-${id}`);
+          const total = parseInt(localStorage.getItem(`total_${id}`)) || 0;
+          contador.textContent = total > 0 ? "Curtido" : "Curtir";
+        });
+      });
 
       function curtirProduto(id) {
         const key = `curtida_${id}`;
@@ -1920,8 +1916,8 @@
         }
 
         localStorage.setItem(key, "true");
-        let total = parseInt(localStorage.getItem(totalKey)) || 0;
-        localStorage.setItem(totalKey, ++total);
+        const total = (parseInt(localStorage.getItem(totalKey)) || 0) + 1;
+        localStorage.setItem(totalKey, total);
         contador.textContent = `${total} ${
           total === 1 ? "curtida" : "curtidas"
         }`;
@@ -1934,15 +1930,6 @@
           });
         }
       }
-
-      window.addEventListener("DOMContentLoaded", () => {
-        document.querySelectorAll(".curtida-container").forEach((c) => {
-          const id = c.dataset.produtoId;
-          const contador = document.getElementById(`contador-${id}`);
-          const total = parseInt(localStorage.getItem(`total_${id}`)) || 0;
-          contador.textContent = total > 0 ? "Curtido" : "Curtir";
-        });
-      });
     </script>
   </body>
 </html>
